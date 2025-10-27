@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=4 uid="uid://cv3g8ucq2v3se"]
+
+[ext_resource type="Texture2D" uid="uid://ddnvtd6fojk60" path="res://tanks-terrain.png" id="1_vonw3"]
+[ext_resource type="PackedScene" uid="uid://dbra60a2y0lvd" path="res://box.tscn" id="2_oi3di"]
+[ext_resource type="PackedScene" uid="uid://cnujl0guhb5dr" path="res://tank.tscn" id="3_oi3di"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0b4ue"]
+texture = ExtResource("1_vonw3")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_f2txt"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_0b4ue")
+
+[node name="Level" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAADAAEAAAACAAMAAAABAAAAAAACAAQAAAABAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAACAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAACAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAACAAAAAAAFAAMAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAAAAAABAAAAAAAGAAEAAAABAAAAAAAGAAIAAAAFAAAAAAAGAAMAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAAAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAACAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAACAAAAAAAIAAMAAAAAAAAAAAAIAAQAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_f2txt")
+
+[node name="Box" parent="." instance=ExtResource("2_oi3di")]
+position = Vector2(612, 311)
+
+[node name="Box2" parent="." instance=ExtResource("2_oi3di")]
+position = Vector2(695, 83)
+
+[node name="Tank" parent="." instance=ExtResource("3_oi3di")]
+position = Vector2(7, 454)

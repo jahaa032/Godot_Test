@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0w174j2368gl"]
+
+[ext_resource type="Texture2D" uid="uid://drrpxbkesy2i0" path="res://tanks-simple.png" id="1_oipx6"]
+
+[node name="Kanonfeste" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(265, 112)
+texture = ExtResource("1_oipx6")
+region_enabled = true
+region_rect = Rect2(199, 97, 24, 60)
