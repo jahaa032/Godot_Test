@@ -1,20 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnujl0guhb5dr"]
+[gd_scene load_steps=5 format=3 uid="uid://cnujl0guhb5dr"]
 
 [ext_resource type="Script" uid="uid://cwjguqr57ruli" path="res://Tank.gd" id="1_1ealj"]
 [ext_resource type="Texture2D" uid="uid://drrpxbkesy2i0" path="res://tanks-simple.png" id="1_6lwfj"]
+[ext_resource type="Script" uid="uid://02n75cxewnj0" path="res://kanon.gd" id="3_a62es"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ealj"]
-size = Vector2(58, 77)
+size = Vector2(76, 55)
 
 [node name="Tank" type="CharacterBody2D"]
 script = ExtResource("1_1ealj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(316, 135)
+position = Vector2(3, -2)
+rotation = -1.5707964
 texture = ExtResource("1_6lwfj")
 region_enabled = true
 region_rect = Rect2(85, 87, 84, 80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(315, 136.5)
+position = Vector2(3, -1.5)
 shape = SubResource("RectangleShape2D_1ealj")
+
+[node name="Kanon" type="Sprite2D" parent="."]
+texture = ExtResource("1_6lwfj")
+offset = Vector2(0, -21)
+region_enabled = true
+region_rect = Rect2(199, 97, 24, 60)
+script = ExtResource("3_a62es")
