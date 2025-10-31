@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbra60a2y0lvd"]
+[gd_scene load_steps=5 format=3 uid="uid://dbra60a2y0lvd"]
 
 [ext_resource type="Texture2D" uid="uid://drrpxbkesy2i0" path="res://tanks-simple.png" id="1_g2tbl"]
+[ext_resource type="Script" uid="uid://dj2tbu2ux636a" path="res://Killblock.gd" id="2_oq5cr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oq5cr"]
 size = Vector2(55, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqn3j"]
+size = Vector2(57, 56)
 
 [node name="Box" type="StaticBody2D"]
 
@@ -16,3 +20,13 @@ region_rect = Rect2(15, 99, 56, 56)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_oq5cr")
+
+[node name="Killblock" type="Area2D" parent="."]
+script = ExtResource("2_oq5cr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killblock"]
+modulate = Color(8.95868, 0, 10.396052, 1)
+position = Vector2(-1.5, 1)
+shape = SubResource("RectangleShape2D_bqn3j")
+
+[connection signal="area_entered" from="Killblock" to="Killblock" method="_on_area_entered"]
